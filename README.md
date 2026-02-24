@@ -62,7 +62,7 @@ https://iptv.zsdc.eu.org/udpxy/192.168.100.2:4022?aptv=1&fcc=182.139.234.40:8027
 
 **示例 3 - 回放转单播（RTSP → HTTP）：**
 ```
-https://iptv.zsdc.eu.org/udpxy/192.168.100.2:4022?fcc=182.139.234.40:8027&rtspProxy=192.168.100.2:4022
+https://iptv.zsdc.eu.org/udpxy/192.168.100.2:4022?fcc=182.139.234.40:8027&rtspProxy=192.168.100.2:4022&r2hToken=passwordxxxxx
 ```
 
 #### 📋 参数说明
@@ -72,12 +72,13 @@ https://iptv.zsdc.eu.org/udpxy/192.168.100.2:4022?fcc=182.139.234.40:8027&rtspPr
 | `aptv=1` | 启用 APTV 时区兼容 | `aptv=1` | APTV、mytv-android 等播放器 |
 | `fcc=host:port` | 启用 FCC 快速换台模式 | `fcc=182.139.234.40:8027` | 需要快速切换频道的场景            |
 | `rtspProxy=host:port` | RTSP 转 HTTP 播放 | `rtspProxy=192.168.100.2:4022` | 不支持 RTSP 协议的播放器/外网回看   |
+| `r2hToken=password`   | rtp2httpd的HTTP请求认证令牌（r2h-token） | `r2hToken=password`| 使用rtp2httpd代理组播或RTSP认证令牌 |
 
 > 📝 **说明**：
 > - 回看时间参数格式：`playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}`
 > - FCC 服务器地址列表：[查看更多](https://github.com/stackia/rtp2httpd/blob/main/docs/cn-fcc-collection.md)
 > - `rtspProxy` 支持 HTTP/HTTPS 协议，可指定 `rtspProxy=https://192.168.100.2:4022`
-
+> - r2hToken参数说明：[查看更多](https://github.com/stackia/rtp2httpd/blob/main/docs/configuration.md#%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6)
 ---
 
 ## 📺 EPG 电子节目单
